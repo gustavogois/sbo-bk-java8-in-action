@@ -27,6 +27,23 @@ class FilteringApplesTest {
     }
 
     @Test
+    void filteringWithClientUsingAnnonymousClass() {
+        List<Apple> applesFiltered = FilteringApples.filter(apples, new Predicate<Apple>() {
+                    @Override
+                    public boolean test(Apple apple) {
+                        return apple.getWeight() > 5 ? true : false;
+                    }
+                });
+                assertThat(applesFiltered.size()).isEqualTo(2);
+    }
+
+    @Test
+    void filteringWithClientUsingLambda() {
+        List<Apple> applesFiltered = FilteringApples.filter(apples, apple -> apple.getWeight() > 5 ? true : false);
+        assertThat(applesFiltered.size()).isEqualTo(2);
+    }
+
+    @Test
     void printingApplesInDifferentWays() {
         List<String> prints = FilteringApples.printingApplesInDifferentWays(apples, new SimpleApplePrint());
         for (String print : prints) {
