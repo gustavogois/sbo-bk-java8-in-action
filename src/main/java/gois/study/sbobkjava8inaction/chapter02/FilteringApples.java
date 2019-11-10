@@ -17,4 +17,12 @@ public class FilteringApples {
         }
         return result;
     }
+
+    public static List<String> printingApplesInDifferentWays(List<Apple> apples, AppleFormatter appleFormatter) {
+        List<String> prints = new ArrayList<>();
+        for (Apple apple : apples) {
+            prints.add(appleFormatter.accept(apple));
+        }
+        return prints;
+    }
 }
