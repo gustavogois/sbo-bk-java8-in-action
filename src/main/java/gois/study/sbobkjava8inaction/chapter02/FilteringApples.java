@@ -3,6 +3,7 @@ package gois.study.sbobkjava8inaction.chapter02;
 import gois.study.sbobkjava8inaction.model.Apple;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -24,5 +25,16 @@ public class FilteringApples {
             prints.add(appleFormatter.accept(apple));
         }
         return prints;
+    }
+
+    public static List<Apple> sortingByWeightUsingListComparator(List<Apple> apples) {
+        apples.sort(new Comparator<Apple>() {
+            @Override
+            public int compare(Apple o1, Apple o2) {
+                return o1.getWeight().compareTo(o2.getWeight());
+            }
+        });
+
+        return apples;
     }
 }

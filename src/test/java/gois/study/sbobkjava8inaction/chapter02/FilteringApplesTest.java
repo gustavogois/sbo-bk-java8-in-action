@@ -34,6 +34,16 @@ class FilteringApplesTest {
         }
     }
 
+    @Test
+    void sortingUsingListComparator() {
+        List<Apple> applesSorted = FilteringApples.sortingByWeightUsingListComparator(this.apples);
+        for (int i = 0 ; i < applesSorted.size() - 1 ; i++) {
+            Apple a1 = applesSorted.get(i);
+            Apple a2 = applesSorted.get(i + 1);
+            assertThat(a1.getWeight() < a2.getWeight());
+        }
+    }
+
     class FilteringByWeight implements Predicate<Apple> {
 
         @Override
