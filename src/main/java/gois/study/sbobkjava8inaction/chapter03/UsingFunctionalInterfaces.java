@@ -2,6 +2,7 @@ package gois.study.sbobkjava8inaction.chapter03;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class UsingFunctionalInterfaces {
@@ -14,5 +15,11 @@ public class UsingFunctionalInterfaces {
             }
         }
         return result;
+    }
+
+    public static <T> void forEachUsingConsumer(List<T> asList, Consumer<T> consumer) {
+        for (T t : asList) {
+            consumer.accept(t);
+        }
     }
 }
