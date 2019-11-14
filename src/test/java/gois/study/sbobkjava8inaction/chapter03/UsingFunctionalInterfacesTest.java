@@ -17,9 +17,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UsingFunctionalInterfacesTest {
 
-    @Rule
-    public OutputCapture outputCapture = new OutputCapture();
-
     @Test
     void filteredUsingPredicate() {
         List<String> result = UsingFunctionalInterfaces
@@ -30,13 +27,14 @@ class UsingFunctionalInterfacesTest {
     }
 
     @Test
-    void soutTest() {
-        System.out.print("hello");
-        assertEquals(outputCapture.toString(), "hello");
+    void forEach() {
+        UsingFunctionalInterfaces.forEachUsingConsumer(Arrays.asList(1, 2, 3), i -> System.out.println(i));
     }
 
     @Test
-    void forEach() {
-        UsingFunctionalInterfaces.forEachUsingConsumer(Arrays.asList(1, 2, 3), i -> System.out.println(i));
+    void applyStringListToLenghtSlist() {
+        List<Integer> result = UsingFunctionalInterfaces
+                .applyStringListToLenghtSlist(Arrays.asList("Casa", "Carro", "voz"), (String s) -> s.length());
+        assertThat(result).contains(4, 5, 3);
     }
 }
