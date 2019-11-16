@@ -15,4 +15,8 @@ public class Apple {
     public Integer getWeight() {
         return weight;
     }
+
+    public Apple(int weight) {
+        this.weight = weight;
+    }
 }
