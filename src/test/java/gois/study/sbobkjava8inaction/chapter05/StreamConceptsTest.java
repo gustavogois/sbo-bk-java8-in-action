@@ -33,4 +33,11 @@ public class StreamConceptsTest {
         assertThat(squares.get(3)).isEqualTo(16);
         assertThat(squares.get(4)).isEqualTo(25);
     }
+
+    @Test
+    public void pairNumbers() {
+        List<int[]> result = StreamConcepts.pairNumbers(Arrays.asList(1, 2), Arrays.asList(3, 4, 5));
+
+        assertThat(result.size()).isEqualTo(6);
+    }
 }

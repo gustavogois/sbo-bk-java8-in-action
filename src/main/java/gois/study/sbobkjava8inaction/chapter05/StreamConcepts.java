@@ -20,4 +20,11 @@ public class StreamConcepts {
                 .map(n -> n * n)
                 .collect(toList());
     }
+
+    public static List<int[]> pairNumbers(List<Integer> list1, List<Integer> list2) {
+        return list1.stream()
+                .flatMap(i1 -> list2.stream()
+                                .map(i2 -> new int[]{i1, i2}))
+                .collect(toList());
+    }
 }
