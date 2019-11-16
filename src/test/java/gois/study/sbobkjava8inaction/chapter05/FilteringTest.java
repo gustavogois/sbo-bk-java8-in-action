@@ -5,8 +5,10 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class FilteringTest {
 
@@ -15,6 +17,9 @@ public class FilteringTest {
         List<Dish> dishesFiltered = Filtering.filterVegetarian(Dish.getMenu());
 
         assertThat(dishesFiltered.size()).isEqualTo(4);
+        // With Hamcrest
+        List<Dish.Type> typeValues = dishesFiltered.stream().map(Dish::getType).collect(Collectors.toList());
+        org.hamcrest.MatcherAssert.assertThat(typeValues, everyItem(equalTo(Dish.Type.OTHER)));
     }
 
     @Test
