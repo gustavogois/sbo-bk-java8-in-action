@@ -12,4 +12,11 @@ public class ConstructorReferencesTest {
         Apple apple = ConstructorReferences.createAnAppleInstanceUsingSupplier(Apple::new);
         assertThat(apple).isNotNull();
     }
+
+    @Test
+    public void createAnAppleInstancePassingOneParameter() {
+        Apple apple = ConstructorReferences.createAnAppleInstanceUsingSupplier(Apple::new, 10);
+        assertThat(apple).isNotNull();
+
+    }
 }
