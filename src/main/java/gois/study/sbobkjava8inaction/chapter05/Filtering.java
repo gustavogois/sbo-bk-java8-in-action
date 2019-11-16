@@ -25,4 +25,11 @@ public class Filtering {
                 .limit(nFirstDishes)
                 .collect(Collectors.toList());
     }
+
+    public static List<Dish> skipFirstXDishesWithMoreThanYCalories(List<Dish> menu, int nSkip, int calories) {
+        return menu.stream()
+                .filter(dish -> dish.getCalories() > calories)
+                .skip(nSkip)
+                .collect(Collectors.toList());
+    }
 }

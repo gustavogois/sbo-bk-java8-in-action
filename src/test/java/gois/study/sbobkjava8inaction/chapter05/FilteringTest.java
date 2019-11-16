@@ -34,4 +34,14 @@ public class FilteringTest {
         assertThat(dishesFiltered.get(0).getCalories()).isGreaterThan(300);
 
     }
+
+    @Test
+    public void skipFirstXDishesWithMoreThanYCalories() {
+        List<Dish> dishesFiltered = Filtering
+                .skipFirstXDishesWithMoreThanYCalories(Dish.getMenu(), 3, 300);
+
+        assertThat(dishesFiltered.size()).isEqualTo(4);
+        assertThat(dishesFiltered.get(0).getCalories()).isGreaterThan(300);
+
+    }
 }
