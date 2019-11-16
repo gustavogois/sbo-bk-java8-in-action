@@ -14,4 +14,10 @@ public class StreamConcepts {
                 .distinct()
                 .collect(toList());
     }
+
+    public static List<Integer> squareNumbers(List<Integer> asList) {
+        return asList.stream()
+                .map(n -> n * n)
+                .collect(toList());
+    }
 }
