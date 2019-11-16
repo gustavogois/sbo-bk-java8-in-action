@@ -32,4 +32,11 @@ public class Filtering {
                 .skip(nSkip)
                 .collect(Collectors.toList());
     }
+
+    public static List<Dish> filterFirstXMealDishes(List<Dish> menu, int nFilter) {
+        return menu.stream()
+                .filter(Dish::isMeal)
+                .limit(nFilter)
+                .collect(Collectors.toList());
+    }
 }

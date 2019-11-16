@@ -44,4 +44,13 @@ public class FilteringTest {
         assertThat(dishesFiltered.get(0).getCalories()).isGreaterThan(300);
 
     }
+
+    @Test
+    public void filterFirstXMealDishes() {
+        List<Dish> dishesFiltered = Filtering
+                .filterFirstXMealDishes(Dish.getMenu(), 2);
+
+        assertThat(dishesFiltered.size()).isEqualTo(2);
+        assertThat(dishesFiltered.get(0).isVegetarian());
+    }
 }

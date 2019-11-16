@@ -37,6 +37,10 @@ public class Dish {
         return name;
     }
 
+    public static boolean isMeal(Dish dish) {
+        return dish.getType().equals(Type.MEAT);
+    }
+
     public enum Type { MEAT, FISH, OTHER }
 
     public static List<Dish> getMenu() {
