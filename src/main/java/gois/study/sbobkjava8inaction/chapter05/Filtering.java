@@ -11,4 +11,11 @@ public class Filtering {
                 .filter(Dish::isVegetarian)
                 .collect(Collectors.toList());
     }
+
+    public static List<Integer> evenNumbersWithNoDuplicates(List<Integer> list) {
+        return list.stream()
+                .filter(i -> i % 2 == 0)
+                .distinct()
+                .collect(Collectors.toList());
+    }
 }
