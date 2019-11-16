@@ -18,4 +18,11 @@ public class Filtering {
                 .distinct()
                 .collect(Collectors.toList());
     }
+
+    public static List<Dish> selectFirstXDishesWithMoreThanYCalories(List<Dish> menu, int nFirstDishes, int calories) {
+        return menu.stream()
+                .filter(dish -> dish.getCalories() > calories)
+                .limit(nFirstDishes)
+                .collect(Collectors.toList());
+    }
 }

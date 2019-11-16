@@ -23,6 +23,15 @@ public class FilteringTest {
         List<Integer> listFiltered = Filtering.evenNumbersWithNoDuplicates(list);
 
         assertThat(listFiltered.size()).isEqualTo(4);
+    }
+
+    @Test
+    public void selectFirstXDishesWithMoreThanYCalories() {
+        List<Dish> dishesFiltered = Filtering
+                 .selectFirstXDishesWithMoreThanYCalories(Dish.getMenu(), 3, 300);
+
+        assertThat(dishesFiltered.size()).isEqualTo(3);
+        assertThat(dishesFiltered.get(0).getCalories()).isGreaterThan(300);
 
     }
 }
