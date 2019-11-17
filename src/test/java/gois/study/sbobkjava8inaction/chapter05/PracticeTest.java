@@ -36,4 +36,11 @@ public class PracticeTest {
         assertThat(traders.size()).isEqualTo(3);
         assertThat(traders.stream().allMatch(t -> t.getCity().equals("Cambridge")));
     }
+
+    @Test
+    public void tradersNamesSortedAlphabetically() {
+        List<String> result = Practice.tradersNamesSortedAlphabetically(Transaction.getTransactions());
+
+        assertThat(result.size()).isEqualTo(4);
+    }
 }
