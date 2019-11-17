@@ -13,4 +13,11 @@ public class FindingAndMatchingTest {
 
         assertThat(result).isEqualTo(true);
     }
+
+    @Test
+    public void isHealthy() {
+        boolean result = FindingAndMatching.isHealthy(Dish.getMenu());
+
+        assertThat(result).isEqualTo(true);
+    }
 }

@@ -9,4 +9,9 @@ public class FindingAndMatching {
         return menu.stream()
                 .anyMatch(Dish::isVegetarian);
     }
+
+    public static boolean isHealthy(List<Dish> menu) {
+        return menu.stream()
+                .allMatch(dish -> dish.getCalories() < 1000);
+    }
 }
