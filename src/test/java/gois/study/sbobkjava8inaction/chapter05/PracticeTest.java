@@ -1,5 +1,6 @@
 package gois.study.sbobkjava8inaction.chapter05;
 
+import gois.study.sbobkjava8inaction.model.Trader;
 import gois.study.sbobkjava8inaction.model.Transaction;
 import org.junit.Test;
 
@@ -26,5 +27,13 @@ public class PracticeTest {
 
         assertThat(result.size() == 2);
         assertThat(result).contains("Cambridge", "Milan");
+    }
+
+    @Test
+    public void allTradersFromCambridgeAndSortByName() {
+        List<Trader> traders = Practice.allTradersFromCambridgeAndSortByName(Transaction.getTransactions());
+
+        assertThat(traders.size()).isEqualTo(3);
+        assertThat(traders.stream().allMatch(t -> t.getCity().equals("Cambridge")));
     }
 }
