@@ -11,7 +11,9 @@ public class FindingAndMatching {
     }
 
     public static boolean isHealthy(List<Dish> menu) {
+        //return menu.stream()
+        //        .allMatch(dish -> dish.getCalories() < 1000);
         return menu.stream()
-                .allMatch(dish -> dish.getCalories() < 1000);
+                .noneMatch(dish -> dish.getCalories() >= 1000);
     }
 }
