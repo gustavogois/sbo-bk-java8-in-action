@@ -39,8 +39,12 @@ public class PracticeTest {
 
     @Test
     public void tradersNamesSortedAlphabetically() {
-        List<String> result = Practice.tradersNamesSortedAlphabetically(Transaction.getTransactions());
+        String result = Practice.tradersNamesSortedAlphabetically(Transaction.getTransactions());
 
-        assertThat(result.size()).isEqualTo(4);
+        assertThat(result).isNotNull();
+    }
+
+    @Test
+    public void anyTradersBasedInMilan() {
     }
 }

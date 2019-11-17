@@ -37,11 +37,12 @@ public class Practice {
                 .collect(toList());
     }
 
-    public static List<String> tradersNamesSortedAlphabetically(List<Transaction> transactions) {
+    public static String tradersNamesSortedAlphabetically(List<Transaction> transactions) {
         return transactions.stream()
                 .map(transaction -> transaction.getTrader().getName())
                 .distinct()
                 .sorted()
-                .collect(toList());
+                .reduce( (a, b) -> a + b)
+                .get();
     }
 }
