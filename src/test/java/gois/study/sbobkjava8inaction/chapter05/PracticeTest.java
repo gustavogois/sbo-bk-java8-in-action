@@ -46,5 +46,7 @@ public class PracticeTest {
 
     @Test
     public void anyTradersBasedInMilan() {
+        assertThat(Practice.anyTradersBasedInMilan(Transaction.getTransactions()));
     }
+
 }

@@ -45,4 +45,9 @@ public class Practice {
                 .reduce( (a, b) -> a + b)
                 .get();
     }
+
+    public static boolean anyTradersBasedInMilan(List<Transaction> transactions) {
+        return transactions.stream()
+                .anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
+    }
 }
