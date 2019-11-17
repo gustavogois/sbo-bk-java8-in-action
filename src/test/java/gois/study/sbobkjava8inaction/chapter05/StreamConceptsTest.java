@@ -40,4 +40,11 @@ public class StreamConceptsTest {
 
         assertThat(result.size()).isEqualTo(6);
     }
+
+    @Test
+    public void onlyPairsSumDivisibleBy3() {
+        List<int[]> result = StreamConcepts.onlyPairsSumDivisibleBy3(Arrays.asList(1, 2), Arrays.asList(3, 4, 5));
+
+        assertThat(result.size()).isEqualTo(2);
+    }
 }
