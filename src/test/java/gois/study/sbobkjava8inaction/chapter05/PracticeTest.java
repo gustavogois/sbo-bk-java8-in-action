@@ -19,4 +19,12 @@ public class PracticeTest {
             return b; // will be "a" for next reduction
         });
     }
+
+    @Test
+    public void uniqueCitiesWhereTradersWork() {
+        List<String> result = Practice.uniqueCitiesWhereTradersWork(Transaction.getTransactions());
+
+        assertThat(result.size() == 2);
+        assertThat(result).contains("Cambridge", "Milan");
+    }
 }

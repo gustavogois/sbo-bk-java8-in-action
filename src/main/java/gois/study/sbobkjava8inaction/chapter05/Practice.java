@@ -15,4 +15,14 @@ public class Practice {
                 .sorted(comparingInt(Transaction::getValue))
                 .collect(Collectors.toList());
     }
+
+    public static List<String> uniqueCitiesWhereTradersWork(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(transaction -> transaction.getTrader().getCity())
+                .distinct()
+                .collect(Collectors.toList());
+        /*return transactions.stream()
+                .map(transaction -> transaction.getTrader().getCity())
+                .collect(toSet());*/
+    }
 }
