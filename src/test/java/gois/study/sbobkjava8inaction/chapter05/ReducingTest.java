@@ -14,4 +14,11 @@ public class ReducingTest {
 
         assertThat(result).isEqualTo(6);
     }
+
+    @Test
+    public void findMax() {
+        int max = Reducing.findMax(Arrays.asList(1, 3, 2));
+
+        assertThat(max).isEqualTo(3);
+    }
 }

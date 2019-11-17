@@ -8,4 +8,10 @@ public class Reducing {
                 //.reduce(0, (a, b) -> a + b);
                 .reduce(0, Integer::sum);
     }
+
+    public static int findMax(List<Integer> list) {
+        return list.stream()
+                .reduce(Integer::max)
+                .get();
+    }
 }
