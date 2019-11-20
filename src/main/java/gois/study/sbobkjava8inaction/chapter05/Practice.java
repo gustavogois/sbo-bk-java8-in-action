@@ -65,4 +65,13 @@ public class Practice {
                 .get()
                 .getValue();
     }
+
+    public static Transaction findTransactionWithSmallestValue(List<Transaction> transactions) {
+        /*return transactions.stream()
+                .reduce((t1, t2) -> t1.getValue() < t2.getValue() ? t1 : t2)
+                .get();*/
+        return transactions.stream()
+                .min(comparing(Transaction::getValue))
+                .get();
+    }
 }

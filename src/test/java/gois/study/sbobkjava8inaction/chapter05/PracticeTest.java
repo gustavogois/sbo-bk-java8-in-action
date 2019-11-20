@@ -59,4 +59,11 @@ public class PracticeTest {
         int value = Practice.highestValue(Transaction.getTransactions());
         assertThat(value).isEqualTo(1000);
     }
+
+    @Test
+    public void findTransactionWithSmallestValue() {
+        Transaction transactionWithSmallestValue = Practice
+                .findTransactionWithSmallestValue(Transaction.getTransactions());
+        assertThat(transactionWithSmallestValue.getValue()).isEqualTo(300);
+    }
 }
