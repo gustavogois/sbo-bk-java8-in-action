@@ -53,4 +53,10 @@ public class PracticeTest {
     public void printAllTransactionsValuesFromTradersLivingInCambridge() {
         Practice.printAllTransactionsValuesFromTradersLivingInCambridge(Transaction.getTransactions());
     }
+
+    @Test
+    public void highestValue() {
+        int value = Practice.highestValue(Transaction.getTransactions());
+        assertThat(value).isEqualTo(1000);
+    }
 }

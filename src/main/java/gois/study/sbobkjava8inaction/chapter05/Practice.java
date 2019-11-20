@@ -58,4 +58,11 @@ public class Practice {
                 .distinct()
                 .forEach(System.out::println);
     }
+
+    public static int highestValue(List<Transaction> transactions) {
+        return transactions.stream()
+                .max(comparing(Transaction::getValue))
+                .get()
+                .getValue();
+    }
 }
