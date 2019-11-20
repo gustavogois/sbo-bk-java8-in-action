@@ -50,4 +50,12 @@ public class Practice {
         return transactions.stream()
                 .anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
     }
+
+    public static void printAllTransactionsValuesFromTradersLivingInCambridge(List<Transaction> transactions) {
+        transactions.stream()
+                .map(Transaction::getTrader)
+                .filter(t -> t.getCity().equals("Cambridge"))
+                .distinct()
+                .forEach(System.out::println);
+    }
 }

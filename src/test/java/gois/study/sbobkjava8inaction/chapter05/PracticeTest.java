@@ -49,4 +49,8 @@ public class PracticeTest {
         assertThat(Practice.anyTradersBasedInMilan(Transaction.getTransactions()));
     }
 
+    @Test
+    public void printAllTransactionsValuesFromTradersLivingInCambridge() {
+        Practice.printAllTransactionsValuesFromTradersLivingInCambridge(Transaction.getTransactions());
+    }
 }
