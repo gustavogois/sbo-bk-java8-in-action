@@ -12,4 +12,9 @@ public class NumericStreamTest {
         int result = NumericStream.sumCalories(Dish.getMenu());
         assertThat(result).isEqualTo(4200);
     }
+
+    @Test
+    public void printAllEvenNumbers() {
+        NumericStream.printAllEvenNumbers(0, 100);
+    }
 }
